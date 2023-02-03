@@ -1,0 +1,23 @@
+{
+  "name": "questions-and-answers-app",
+  "version": "1.0.0",
+  "description": "Questions and Answers app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atzac/questions-and-answers-app.git"
+  },
+  "author": "Isaac Quidute",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atzac/questions-and-answers-app/issues"
+  },
+  "homepage": "https://github.com/Atzac/questions-and-answers-app#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
