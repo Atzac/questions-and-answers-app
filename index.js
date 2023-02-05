@@ -23,8 +23,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // Rotas
-app.get('/', (req, res) => { 
-    res.render('index');
+app.get('/', (req, res) => {
+    AskModel.findAll({ raw: true }).then((asks) => {
+        console.log(asks)
+        res.render('index', {
+            asks: asks
+        });
+    }); 
 });
 
 app.get('/ask', (req, res) => { 
