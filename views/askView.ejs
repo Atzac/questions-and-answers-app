@@ -10,18 +10,36 @@
         <p><%= ask.description %></p>
       </div>
       <div class="card-footer">
-        <form>
+        <form method="post" action="/saveAnswer">
           <h6>Responda:</h6>
           <textarea
             placeholder="Digite sua resposta"
             class="form-control"
             name="body"
           ></textarea>
+          <input type="hidden" , name="answer" value="<%= ask.id %>" />
           <button class="btn btn-success mt-4">Responder</button>
           <a href="/" class="btn btn-outline-dark mt-4">Voltar</a>
         </form>
       </div>
     </div>
+
+    <div class="mt-4">
+      <h3>Respostas</h3>
+    </div>
+
+    <% if(answers.length < 1){ %>
+    <div class="alert alert-primary shadow" role="alert">
+      Essa pergunta ainda nao possui nenhuma resposta!
+    </div>
+    <% } %> <% answers.forEach(answer => { %>
+    <div class="card mt-4 shadow">
+      <div class="card-body">
+        <h5><%= answer.body %></h5>
+        <br />
+      </div>
+    </div>
+    <% }) %>
   </div>
 </body>
 <%- include ('partials/footer.ejs'); %>
