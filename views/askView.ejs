@@ -3,14 +3,6 @@
   <%- include ('partials/navbar.ejs'); %>
 
   <div class="container mt-4">
-    <div class="d-flex justify-content-between p-2 d-flex mb-2">
-      <h3>Perguntas</h3>
-      <a href="/ask" class="btn btn-outline-info">Fazer uma pergunta</a>
-    </div>
-
-    <hr />
-
-    <% asks.forEach(ask => { %>
     <div class="card mt-4 shadow">
       <div class="card-body">
         <h5><%= ask.title %></h5>
@@ -18,10 +10,18 @@
         <p><%= ask.description %></p>
       </div>
       <div class="card-footer">
-        <a href="/ask/<%= ask.id %>" class="btn btn-success">Responder</a>
+        <form>
+          <h6>Responda:</h6>
+          <textarea
+            placeholder="Digite sua resposta"
+            class="form-control"
+            name="body"
+          ></textarea>
+          <button class="btn btn-success mt-4">Responder</button>
+          <a href="/" class="btn btn-outline-dark mt-4">Voltar</a>
+        </form>
       </div>
     </div>
-    <% }) %>
   </div>
 </body>
 <%- include ('partials/footer.ejs'); %>
